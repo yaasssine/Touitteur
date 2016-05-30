@@ -1,0 +1,785 @@
+body {
+	background-color: #f8f8f8;
+	color: #444;
+	font-family: "Roboto";
+	font-size: 14px;
+	font-weight: 400;
+	margin: 100px auto 0 auto;
+	padding: 0;
+	width: 800px;
+	word-wrap: break-word;
+	width: 700px;
+	max-width: 700px;
+}
+
+a, span.lien {
+	color: #2e83ba;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:hover, span.lien:hover {
+	color: #5da8db;
+}
+
+div.fond-fenetre {
+	display: none;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(255,255,255,0.5);
+	z-index: 998;
+}
+
+section.fenetre {
+	display: none;
+	position: fixed;
+	top: 73px;
+	right: calc(50vw - 250px);
+	left: calc(50vw - 250px);
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-top: 0;
+	z-index: 999;
+	width: 500px;
+	border-radius: 0;
+}
+
+section#message.fenetre > ul {
+	display: block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: auto;
+}
+
+section#message.fenetre > ul.conversation {
+	min-height: 400px;
+	max-height: 400px;
+}
+
+section#message.fenetre > ul.liste-msg {
+	min-height: 530px;
+	max-height: 530px;
+}
+
+section#message.fenetre ul.conversation li {
+	display: inline-block;
+	clear: both;
+	max-width: 200px;
+	border-radius: 15px;
+	margin: 10px;
+	cursor: default;
+}
+
+section#message.fenetre ul.conversation li.utilisateur {
+	float: left;
+	background: linear-gradient(to top, #37a5ef 0%, #69bfff 100%);
+	color: #fff;
+}
+
+section#message.fenetre ul.conversation li.destinataire {
+	float: right;
+	background: linear-gradient(to top, #eee 0%, #f8f8f8 100%);
+	color: #444;
+}
+
+section#message.fenetre > ul.liste-msg > p {
+	text-align: center;
+	color: #aaa;
+}
+
+section#message.fenetre .liste-msg li:hover {
+	background-color: #f8f8f8;
+	cursor: pointer;
+}
+
+section#message.fenetre .liste-msg li:active {
+	background-color: #f4f4f4;
+}
+
+section#message.fenetre h1 {
+	padding: 15px 20px;
+	line-height: 30px;
+}
+
+section#message.fenetre h1 button {
+	float: right;
+	padding: 5px 10px;
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: #fff;
+	border-bottom: 1px solid #eee;
+	font-size: 15px;
+	z-index: 999;
+}
+
+nav > div {
+	width: 900px;
+	margin: 20px auto;
+}
+
+#logo {
+	color: #2e83ba;
+	font-size: 30px;
+	line-height: 0;
+	font-family: "Satisfy";
+	font-weight: 400;
+	margin: 0 15px;
+	text-transform: none;
+	border: 0;
+	vertical-align: middle;
+	cursor: default;
+}
+
+#logo i {
+	font-size: 20px;
+}
+
+nav .menu form {
+	margin: 0 0 0 138px;
+}
+
+nav input[type="text"] {
+	transition: all 0.5s;
+	padding: 7px 15px;
+	font-size: 14px;
+	font-family: "Roboto";
+	font-weight: 400;
+	border-radius: 20px;
+	border: 1px solid #e8e8e8;
+	background-color: #f8f8f8;
+	width: 200px;
+	margin: 0;
+}
+
+nav input[type="text"]:focus {
+	border-color: #ddd;
+	background-color: #fff;
+}
+
+nav #logo, nav .menu, nav .menu form, nav .menu ul, nav .menu ul li {
+	display: inline-block;
+}
+
+nav .menu ul {
+	margin: 0;
+	list-style: none;
+	width: 330px;
+	text-align: right;
+}
+
+nav .menu li {
+	margin: 0 15px;
+}
+
+nav .menu a span {
+	background-color: #2e83ba;
+	color: #fff;
+	border-radius: 4px;
+	padding: 0 2px;
+}
+
+nav .menu a:hover span {
+	background-color: #5da8db;
+}
+
+
+hr {
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 30px 0 0 0;
+}
+
+aside {
+	float: right;
+}
+
+aside.publier-touite-timeline {
+	padding: 10px 20px 0 0;
+}
+
+textarea#texte-publier-touite {
+	width: 540px;
+	margin-right: 10px;
+}
+
+section .separateur {
+	text-align: center;
+	margin: 10px 0;
+}
+
+section .separateur span {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	background-color: #fff;
+	width: 50px;
+	top: -8px;
+	text-transform: uppercase;
+	color: #aaa;
+	font-weight: 500;
+}
+
+section {
+	background-color: #fff;
+	border: 1px solid #eee;
+	border-radius: 2px;
+	max-width: 700px;
+	margin-bottom: 20px;
+}
+
+section h1, section h2 {
+	margin: 0;
+	border-bottom: 1px solid #eee;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+section h1 {
+	padding: 10px 20px;
+	font-size: 20px;
+	color: #2e83ba;
+}
+
+section h2 {
+	padding: 15px 20px;
+	font-size: 15px;
+	color: #aaa;
+}
+
+section.home {
+	width: 330px;
+	margin: 0 auto;
+	padding: 15px 40px;
+}
+
+section.home p {
+	text-align: center;
+	padding: 5px 0 10px 0;
+}
+
+section.home #logo {
+	text-align: center;
+	margin: 15px 0 0 0;
+	font-size: 50px;
+}
+
+section.home #logo i {
+	font-size: 30px;
+}
+
+section.home h2 {
+	text-transform: none;
+	font-size: 18px;
+	font-weight: 500;
+	color: #bbb;
+	border: 0;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+section.home input[type="text"], section.home input[type="password"], section.home input[type="email"], section.home input[type="submit"], section.home button {
+	width: 308px;
+	margin: 5px 0;
+}
+
+section.home input[type="submit"], section.home button {
+	width: 330px;
+	margin: 5px 0;
+}
+
+section p {
+	padding: 10px 20px;
+	margin: 0;
+}
+
+section p.erreur, span#afficher-supprimer-compte, section span#compteur-publier-touite.erreur, section span#compteur-envoyer-message.erreur {
+	color: #da1616;
+}
+
+span#afficher-supprimer-compte:hover, section span#compteur-publier-touite.avertissement, section span#compteur-envoyer-message.avertissement {
+	color: #ef5d5d;
+}
+
+section form table {
+	border-collapse: collapse;
+	margin: 10px auto;
+}
+
+section form table td {
+	padding: 10px 0;
+	max-width: 320px;
+}
+
+section form table td.info {
+	padding: 0 0 10px 10px;
+	color: #999;
+}
+
+section form table p {
+	padding: 0;
+	color: #999;
+}
+
+section form table label {
+	text-align: left;
+	display: block;
+	width: 200px;
+	font-size: 15px;
+}
+
+section form input[type="text"], section form input[type="password"], section form input[type="email"], section form input[type="file"] {
+	transition: all 0.5s;
+	background-color: #fafafa;
+	border: 1px solid #eee;
+	border-radius: 4px;
+	padding: 10px;
+	font-size: 14px;
+	font-family: "Roboto";
+	font-weight: 400;
+	width: 300px;
+	margin: 0;
+}
+
+section textarea {
+	transition: all 0.5s;
+	background-color: #fafafa;
+	border: 1px solid #eee;
+	border-radius: 4px;
+	padding: 10px;
+	font-size: 14px;
+	font-family: "Roboto";
+	font-weight: 400;
+	width: 300px;
+	height: 70px;
+	resize: none;
+	margin: 0;
+}
+
+section form input[type="text"]:disabled, section form input[type="password"]:disabled, section form input[type="email"]:disabled, section textarea:disabled {
+	color: #555;
+	background-color: #f4f4f4;
+	cursor: not-allowed;
+}
+
+section form input[type="text"]:focus, section form input[type="password"]:focus, section form input[type="email"]:focus, section textarea:focus {
+	background-color: #fff;
+	border-color: #2e83ba;
+}
+
+section form input[type="submit"], section button {
+	transition: all 0.2s;
+	background-color: #37a5ef;
+	border: 0;
+	border-radius: 4px;
+	padding: 10px 15px;
+	font-size: 15px;
+	font-family: "Roboto";
+	font-weight: 500;
+	margin: 0;
+	color: #fff;
+	cursor: pointer;
+}
+
+section form input[type="submit"]:hover, section button:hover {
+	background-color: #2e83ba;
+}
+
+section form input[type="submit"]:active, section button:active {
+	background-color: #226592;
+}
+
+section span#compteur-publier-touite, .touite span.compteur, section span#compteur-envoyer-message {
+	display: block;
+	text-align: center;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #999;
+}
+
+.touite span.compteur {
+	text-align: right;
+	padding-bottom: 0;
+}
+
+button.suivre, button#deconnexion, button#parametre {
+	color: #2e83ba;
+	background-color: transparent;
+	border: 1px solid #2e83ba;
+	border-radius: 4px;
+	padding: 6px 12px;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-family: "Roboto";
+	font-size: 15px;
+	font-weight: 500;
+	display: inline-block;
+	vertical-align: text-top;
+}
+
+button.suivre.suivi {
+	color: #fff;
+	background-color: #34bc3b;
+	border-color: #34bc3b;
+}
+
+button#deconnexion {
+	color: #da1616;
+	border-color: #da1616;
+}
+
+button#deconnexion:hover {
+	color: #ef5d5d;
+	border-color: #ef5d5d;
+}
+
+button#parametre {
+	color: #888;
+	border-color: #888;
+}
+
+button#parametre:hover {
+	color: #aaa;
+	border-color: #aaa;
+}
+
+button.suivre:hover {
+	background-color: transparent;
+	color: #5da8db;
+	border-color: #5da8db;
+}
+
+button.suivre.suivi:hover {
+	color: #fff;
+	background-color: #4ed355;
+	border-color: #4ed355;
+}
+
+header {
+	background-color: transparent;
+	border: 0;
+	padding: 10px 0;
+	margin-bottom: 10px;
+	min-height: 130px;
+}
+
+header h1, header h2 {
+	margin: 0;
+}
+
+header h1 {
+	font-weight: 300;
+	font-size: 30px;
+	color: #444;
+	letter-spacing: 0.5px;
+	display: inline-block;
+}
+
+header h1 button.suivre, header h1 button#deconnexion {
+	margin-left: 15px;
+}
+
+header h2 {
+	font-weight: 500;
+	font-size: 22px;
+	color: #2e83ba;
+}
+
+header p {
+	margin: 10px 10px 0 0;
+	font-size: 15px;
+	line-height: 21px;
+	word-wrap: break-word;
+	max-width: 500px;
+}
+
+
+
+header table.stat {
+	border-collapse: separate;
+	margin: 10px auto 0 auto;
+}
+
+header table.description {
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+
+header table.description div.nom {
+	font-size: 17px;
+	color: #777;
+	border-bottom: 1px solid #eee;
+	margin-right: 10px;
+}
+
+header table td {
+	max-width: 520px;
+	min-width: 520px;
+}
+
+header table td.photo {
+	min-width: 150px;
+	max-width: 150px;
+}
+
+header table td.photo img {
+	width: 130px;
+	height: 130px;
+}
+
+header table.stat td {
+	background-color: #f4f4f4;
+	border-radius: 0;
+	padding: 10px 10px 7px 10px;
+	min-width: 310px;
+	max-width: 310px;
+	border-bottom: 3px solid transparent;
+}
+
+header table.stat td.info {
+	min-width: 100px;
+	max-width: 100px;
+}
+
+header table.stat td.info.active {
+	border-bottom: 3px solid #2e83ba;
+}
+
+header table.stat td.info.active span a, header table.stat td.info.active span strong {
+	color: #2e83ba;
+}
+
+header table.stat td.info span {
+	display: block;
+	text-align: center;
+	text-transform: uppercase;
+	color: #555;
+	font-size: 13px;
+}
+
+header table.stat td.info span a {
+	color: #888;
+}
+
+header table.stat td.info span a:hover {
+	color: #5da8db;
+}
+
+header table.stat td.info span strong {
+	color: #444;
+	font-size: 20px;
+	font-weight: 400;
+	display: block;
+}
+
+
+
+
+
+.touite {
+	padding: 10px 20px;
+	border-bottom: 1px solid #eee;
+}
+
+.touite p {
+	font-size: 16px;
+	line-height: 23px;
+	margin: 0;
+	padding: 5px 0;
+	margin-left: 60px;
+	max-width: 500px;
+}
+
+.touite > a {
+	font-size: 15px;
+	font-weight: 500;
+}
+
+div.touite aside span.date {
+	margin-left: 10px;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+div.touite aside span.date {
+	color: #aaa;
+	cursor: default;
+}
+
+div.touite > aside {
+	float: right;
+	width: 100px;
+	text-align: right;
+}
+
+div.touite ul.action li.supprimer:hover {
+	color: #ef5d5d;
+}
+
+
+.touite ul.action {
+	list-style: none;
+	margin: 0;
+	vertical-align: text-bottom;
+	padding: 0;
+}
+
+.touite ul.action li {
+	display: inline-block;
+	margin: 0 0 0 2px;
+	text-transform: uppercase;
+	padding: 5px 0 5px 5px;
+	text-align: center;
+	border-radius: 4px;
+	cursor: pointer;
+	color: #aaa;
+	border: 0;
+	font-size: 25px;
+	vertical-align: middle;
+}
+
+.touite ul.action li:hover, .touite .afficher-masquer-reponse:hover {
+	color: #5da8db;
+}
+
+.touite .afficher-masquer-reponse:active {
+	color: #2e83ba;
+}
+
+.touite .afficher-masquer-reponse {
+	text-align: center;
+	margin: 0 -20px -10px -20px;
+	padding: 5px;
+	color: #aaa;
+	cursor: pointer;
+	font-size: 13px;
+}
+
+.touite .afficher-masquer-reponse.masquer {
+	background: linear-gradient(#fff 40%, #fafafa 100%);
+}
+
+.touite .photo {
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+}
+
+.touite.reponse, .touite.repondre, .touite.charger-reponse {
+	border: 0;
+	border-top: 1px solid #eee;
+	margin-left: 60px;
+	margin-top: 10px;
+	padding: 10px 0 0 0;
+}
+
+.touite.charger-reponse a {
+	font-weight: 400;
+	font-size: 14px;
+}
+
+.touite.reponse p {
+	max-width: 430px;
+	font-size: 14px;
+}
+
+.touite.repondre textarea {
+	width: 430px;
+	height: 50px;
+	background-color: #fff;
+	border: 0;
+	padding: 5px 0;
+	margin: 0;
+}
+
+
+
+/* Fiche d'un profil (miniature) */
+
+div.profil {
+	border-bottom: 1px solid #eee;
+	font-size: 16px;
+	font-weight: 500;
+	height: 40px;
+	padding: 10px 20px;
+}
+
+div.profil a {
+	vertical-align: middle;
+}
+
+div.profil button.suivre {
+	float: right;
+	font-size: 14px;
+	margin: 5px 0 0 0;
+	padding: 5px 10px;
+}
+
+div.profil .photo {
+	height: 40px;
+	margin-right: 10px;
+	vertical-align: middle;
+	width: 40px;
+}
+
+div.profil > span.nom {
+	display: block;
+	color: #999;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+div.profil > span.nom em {
+	background-color: #aaa;
+	border-radius: 2px;
+	color: #fff;
+	cursor: default;
+	font-size: 11px;
+	padding: 0 1px;
+	text-transform: uppercase;
+}
+
+
+
+
+
+img.photo, .photo img {
+	float: left;
+	border-radius: 50%;
+	background-color: #2e83ba;
+	border: 1px solid #ccc;
+}
+
+footer {
+	color: #999;
+	margin: 10px auto 30px auto;
+	text-align: center;
+	border-top: 1px solid #eee;
+	width: 250px;
+	padding: 10px;
+}
+
+footer p {
+	display: inline;
+}
+
+input:invalid, input:required, input.erreur {
+	border: 1px solid #da1616;
+	box-shadow: none;
+}
+
+textarea span {
+	color: #5da8db;
+}
+
+input, textarea {
+	outline: none;
+}
